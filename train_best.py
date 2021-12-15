@@ -178,7 +178,7 @@ def main():
     args = parser.parse_args()
     torch.manual_seed(args.seed)
     device = torch.device("cuda")
-    
+
     model = get_instance_segmentation_model(2)
     model.to(device)
 
@@ -209,7 +209,6 @@ def main():
         collate_fn=utils.collate_fn
     )
 
-
     optimizer = optim.Adam(model.parameters(), lr=1e-4, weight_decay=5e-5)
     scheduler = torch.optim.lr_scheduler.MultiStepLR(
         optimizer, milestones=[300], gamma=0.1)
@@ -219,7 +218,7 @@ def main():
         train_one_epoch(model, optimizer, train_loader_2,
                         device, epoch, print_freq=200)
         scheduler.step()
-        
+
     optimizer = optim.Adam(model.parameters(), lr=1e-5, weight_decay=5e-5)
     scheduler = torch.optim.lr_scheduler.MultiStepLR(
         optimizer, milestones=[500], gamma=0.5)
@@ -230,8 +229,6 @@ def main():
         if epoch == 900:
             torch.manual_seed(21)
         scheduler.step()
-    
-
 
 if __name__ == "__main__":
     main()

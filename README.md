@@ -30,7 +30,16 @@ and unzip it
 and unzip it 
 3.  `pip install -r requirements.txt`
 4.  `python train.py --epoch 1900 --batch-size 4`
-5.  `model.pt` is your model
+5.  type n
+6.  `model.pt` is your model
+
+## How to train my best model
+1.  git clone this project
+2.  Download train dataset  from [here](https://drive.google.com/file/d/1nEJ7NTtHcCHNQqUXaoPk55VH3Uwh4QGG/view) 
+and unzip it 
+3.  `pip install -r requirements.txt`
+5.  `python train_best.py`
+7.  `model.pt` is your model
 
 ## Pretrained model link
 [link](https://drive.google.com/file/d/1RV2JBMsNR7F4B0bO6EHnBnFxOehVgzgd/view?usp=sharing)
